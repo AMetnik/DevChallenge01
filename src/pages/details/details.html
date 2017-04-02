@@ -1,0 +1,79 @@
+<!--
+  Generated template for the Details page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="movie !== null">{{movie.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+
+  <ion-grid *ngIf="movie !== null">
+    <ion-row>
+      <ion-col col-11>
+        <h3>{{movie.title}}</h3>
+      </ion-col>
+      <ion-col col-1>
+        <ion-icon name="star" [ngClass]="{'yellow':isFavorite}" (click)="addToFavorites()"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <img [src]="movie.poster">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <p>{{movie.plot}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <h5>Genre</h5>
+      </ion-col>
+      <ion-col col-8>
+        {{movie.genre}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <h5>Length</h5>
+      </ion-col>
+      <ion-col col-8>
+        {{movie.runtime}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <h5>Actors</h5>
+      </ion-col>
+      <ion-col col-8>
+        {{movie.actors}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <h5>Director</h5>
+      </ion-col>
+      <ion-col col-8>
+        {{movie.director}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <h5>Writers</h5>
+      </ion-col>
+      <ion-col col-8>
+        {{movie.writer}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
